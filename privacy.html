@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy — Product Party</title>
+  <meta name="description" content="Privacy Policy for Product Party: Shopify Product Scraper & CSV Extractor Chrome Extension.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ═══════ NAVIGATION ═══════ -->
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-brand">
+        <span class="icon-logo">{}</span>
+        Product Party
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#features">Features</a></li>
+        <li><a href="privacy.html">Privacy</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ═══════ PRIVACY CONTENT ═══════ -->
+  <section class="privacy-page">
+    <div class="container privacy-content">
+      <h1>Privacy Policy</h1>
+      <p class="last-updated">Last updated: March 28, 2026</p>
+
+      <div class="highlight-box">
+        <strong>The Golden Rule:</strong> Product Party runs 100% locally inside your browser. Your scraped data, store credentials, and extraction output are <strong>never</strong> sent to, stored on, or shared with any external servers, analytics providers, or third-party databases.
+      </div>
+
+      <h2>1. What This Extension Does</h2>
+      <p>
+        Product Party: Shopify Product Scraper & CSV Extractor is a Chrome Extension built on Manifest V3. It extracts publicly available product data from Shopify-powered online stores and converts it into downloadable CSV or JSON files on your local machine.
+      </p>
+
+      <h2>2. Data Collection</h2>
+      <p>
+        <strong>We do not collect any personal data.</strong> Product Party does not:
+      </p>
+      <ul>
+        <li>Transmit any data to remote servers</li>
+        <li>Use cookies or tracking pixels</li>
+        <li>Store browsing history</li>
+        <li>Collect email addresses, names, or any personal identifiers</li>
+        <li>Use analytics, telemetry, or crash reporting services</li>
+        <li>Communicate with any external API beyond the Shopify store you are actively visiting</li>
+      </ul>
+
+      <h2>3. Data Processing</h2>
+      <p>
+        All data extraction and file generation occurs entirely within your browser using Chrome's native APIs. Specifically:
+      </p>
+      <ul>
+        <li><strong>Product data</strong> is fetched directly from Shopify's public <code>/products.json</code> endpoints on the store you are visiting</li>
+        <li><strong>CSV/JSON conversion</strong> is performed locally using JavaScript inside the extension's Service Worker</li>
+        <li><strong>Image ZIP files</strong> are generated locally using an embedded copy of JSZip — no external CDN is loaded</li>
+        <li><strong>Brand Kit assets</strong> (logos, favicons) are fetched directly from the store's own CDN and packaged locally</li>
+      </ul>
+
+      <h2>4. Permissions &amp; Justifications</h2>
+      <p>This extension requests the following Chrome permissions:</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Permission</th>
+            <th>Justification</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>activeTab</code></td>
+            <td>Required to execute extraction scripts only when the user explicitly clicks the extension popup on the active tab.</td>
+          </tr>
+          <tr>
+            <td><code>scripting</code></td>
+            <td>Required to inject the DOM scanner into the active tab to identify product handles, theme names, and brand asset URLs.</td>
+          </tr>
+          <tr>
+            <td><code>downloads</code></td>
+            <td>Required to save the generated CSV, JSON, and ZIP files directly to the user's local filesystem.</td>
+          </tr>
+          <tr>
+            <td><code>storage</code></td>
+            <td>Required to persist the user's export preferences (column exclusions, filename conventions, HTML stripping) across sessions using Chrome Sync Storage.</td>
+          </tr>
+          <tr>
+            <td><code>&lt;all_urls&gt;</code> <em>(Optional)</em></td>
+            <td>An optional, user-toggled permission that enables the "Auto-Detect Shopify" background listener. When enabled, the extension badge lights up when a Shopify store is detected. This permission is not granted by default.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>5. User Settings Storage</h2>
+      <p>
+        Product Party uses <code>chrome.storage.sync</code> to save your export preferences. This data is stored in your Chrome profile and synced across your signed-in browsers via Google's native sync infrastructure. The only data stored is:
+      </p>
+      <ul>
+        <li>Whether to strip HTML tags from descriptions (boolean)</li>
+        <li>Whether to exclude the Body_HTML column (boolean)</li>
+        <li>Filename prefix style preference (string: "store" or "date")</li>
+      </ul>
+      <p>No personal information is ever stored.</p>
+
+      <h2>6. Third-Party Services</h2>
+      <p>
+        Product Party does not integrate with any third-party services, analytics platforms, advertising networks, or data brokers. The only external HTTP requests made are to the Shopify store that the user is actively visiting, using Shopify's publicly accessible JSON endpoints.
+      </p>
+
+      <h2>7. Children's Privacy</h2>
+      <p>
+        This extension is not directed at children under 13. We do not knowingly collect any information from children.
+      </p>
+
+      <h2>8. Changes to This Policy</h2>
+      <p>
+        We may update this Privacy Policy from time to time. Any changes will be reflected in the "Last updated" date at the top of this page. Continued use of the extension after changes constitutes acceptance of the updated policy.
+      </p>
+
+      <h2>9. Contact</h2>
+      <p>
+        If you have any questions about this Privacy Policy or the extension's data practices, you can reach us at:
+      </p>
+      <ul>
+        <li><strong>Buy Me A Coffee:</strong> <a href="https://buymeacoffee.com/tweedy" target="_blank">buymeacoffee.com/tweedy</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ═══════ FOOTER ═══════ -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p>&copy; 2026 Product Party. All rights reserved.</p>
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="https://buymeacoffee.com/tweedy" target="_blank">Buy Me A Coffee</a></li>
+      </ul>
+    </div>
+  </footer>
+
+</body>
+</html>
